@@ -24,9 +24,9 @@ class Cell {
 }
 
 function makeText({row, column, width, height}) {
-  let x = row * width + width / 2 * Settings.xPosition();
-  let y = column * height + height / 2 * Settings.yPosition();
-  return `${row}, ${column} (${x}px, ${y}px)`;
+  let x = column * width + width / 2 * Settings.xPosition();
+  let y = row * height + height / 2 * Settings.yPosition();
+  return `${column}, ${row} (${x}px, ${y}px)`;
 }
 
 module.exports = Cell;
