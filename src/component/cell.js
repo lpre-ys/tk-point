@@ -11,10 +11,14 @@ class Cell {
     this.column = vnode.attrs.column;
   }
   view(vnode) {
+    const isActive = (this.row === Info.targetX() && this.column === Info.targetY());
     return m(`.cell#column-${this.column}`, {
       onclick: () => {
         Info.text(makeText(this));
-      }
+        Info.targetX(this.row);
+        Info.targetY(this.column);
+      },
+      class: `${isActive ? 'is-active' : ''}`
     }, '');
   }
 }
